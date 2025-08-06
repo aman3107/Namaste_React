@@ -1,7 +1,7 @@
 {
-  "name": "namaste_react",
+  "name": "react",
   "version": "1.0.0",
-  "description": "Namaste React",
+  "description": "React Foundation",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
@@ -11,9 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/aman3107/Namaste_React.git"
   },
-  "keywords": [
-    "react"
-  ],
   "author": "Aman Mittal",
   "license": "ISC",
   "bugs": {
@@ -26,8 +23,5 @@
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ]
+  }
 }
