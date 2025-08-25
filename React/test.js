@@ -44,6 +44,27 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(jsxHeading);
 // console.log(Title);
 // root.render(<Heading />);
+// Conditional Rendering
+// if (listOfRestuarants.length === 0) {
+//   return <Shimmer />;
+// }
+
+// createBrowserRouter
+// const appRouter = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <AppLayout />,
+//     errorElement: <Error />,
+//   },
+//   {
+//     path: "/about",
+//     element: <About />,
+//   },
+//   {
+//     path: "/contact",
+//     element: <Contact />,
+//   },
+// ]);
 
 const resList = [
   {

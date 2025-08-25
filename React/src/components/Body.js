@@ -26,10 +26,6 @@ const Body = () => {
     );
   };
 
-  // Conditional Rendering
-  // if (listOfRestuarants.length === 0) {
-  //   return <Shimmer />;
-  // }
   return filteredRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
