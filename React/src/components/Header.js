@@ -16,13 +16,19 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="underline-link">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About Us</Link>
+            <Link to="/about" className="underline-link">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact" className="underline-link">
+              Contact Us
+            </Link>
           </li>
           <li>Cart</li>
           <li>

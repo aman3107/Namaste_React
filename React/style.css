@@ -73,3 +73,18 @@
 .filter {
   display: flex;
 }
+
+.underline-link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.user-card {
+  /* width: 200px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f0f0f0; */
+  padding: 10px;
+  border: 1px solid black;
+}
