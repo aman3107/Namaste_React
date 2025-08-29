@@ -980,3 +980,15 @@ const AppLayout = () => {
 };
 
 root.render(<AppLayout />);
+
+// How to use useEffect
+// useEffect(() => {
+//   fetchMenu();
+// }, []);
+
+// const fetchMenu = async () => {
+//   const data = await fetch(Menu_URL + resId);
+
+//   const json = await data.json();
+//   setResInfo(json.data);
+// };
