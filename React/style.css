@@ -16,7 +16,7 @@
 
 .nav-items ul li {
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .search {
@@ -77,6 +77,11 @@
 .underline-link {
   text-decoration: inherit;
   color: inherit;
+}
+
+.underline-link:hover {
+  color: blue;
+  text-decoration: underline;
 }
 
 .user-card {

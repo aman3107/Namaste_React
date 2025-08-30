@@ -34,6 +34,11 @@ const Header = () => {
               Contact Us
             </Link>
           </li>
+          <li>
+            <Link to="/grocery" className="underline-link">
+              Grocery
+            </Link>
+          </li>
           <li>Cart</li>
           <li>
             <button
