@@ -11,12 +11,12 @@ class UserClass extends React.Component {
         avatar_url: "Dummy",
       },
     };
-    console.log("Constructor");
+    // console.log("Constructor");
   }
 
   // API Calls
   async componentDidMount() {
-    console.log("Component did mount");
+    // console.log("Component did mount");
 
     // useEffect
     const data = await fetch("https://api.github.com/users/aman3107");
@@ -28,11 +28,11 @@ class UserClass extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("Component Did Update");
+    // console.log("Component Did Update");
   }
 
   componentWillUnmount() {
-    console.log("Component Will Unmount");
+    // console.log("Component Will Unmount");
   }
 
   render() {
@@ -42,12 +42,14 @@ class UserClass extends React.Component {
     const { count, count2 } = this.state;
     const { name, location, avatar_url } = this.state.userInfo;
 
-    console.log("Render");
+    // console.log("Render");
     return (
-      <div className="user-card">
-        <img src={avatar_url} style={{ height: "200px", width: "200px" }} />
-        <h1>Count: {count}</h1>
+      <div className="user-card w-[300px] h-[600px] flex-wrap bg-gray-100 p-1 m-1 border border-solid flow-root">
+        <img src={avatar_url} className="w-[300px] h-[300px] shadow-xl" />
+
+        <h1 className="pt-3 font-medium">Count: {count}</h1>
         <button
+          className="px-2 py-1 m-2  hover:bg-black hover:text-white border rounded-lg"
           onClick={() => {
             this.setState({
               count: this.state.count + 1,
@@ -57,6 +59,7 @@ class UserClass extends React.Component {
           Increase Count
         </button>
         <button
+          className="px-2 py-1 m-2  hover:bg-black hover:text-white border rounded-lg"
           onClick={() => {
             this.setState({
               count: this.state.count > 0 ? this.state.count - 1 : 0,
@@ -66,9 +69,9 @@ class UserClass extends React.Component {
           Decrease Count
         </button>
         {/* <h1>Count2: {count2}</h1> */}
-        <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
-        <h3>Contact: {contact}</h3>
+        <h2 className="font-medium">Name: {name}</h2>
+        <h3 className="font-medium">Location: {location}</h3>
+        <h3 className="font-medium">Contact: {contact}</h3>
       </div>
     );
   }

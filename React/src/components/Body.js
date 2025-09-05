@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
@@ -9,6 +9,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,17 +37,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex items-center">
+        <div className="search p-4 m-4">
           <input
             type="text"
-            className="search-box"
+            className="search-box border rounded-md p-0.5"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 m-4  hover:bg-black hover:text-white border rounded-lg"
             onClick={() => {
               // filter the restaurant cards and update the UI
               const filteredRes = listOfRestuarants.filter((res) =>
@@ -59,27 +62,33 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            // filter logic here, hooks
-            const filteredList = filteredRestaurant.filter(
-              (resObj) => resObj.info.avgRating > 4.3
-            );
-            setFilteredRestaurant(filteredList);
-          }}
-        >
-          Top Rated Resturants
-        </button>
+        <div className="p-4 m-4">
+          <button
+            className="filter-btn px-4 py-2 m-4 hover:bg-black hover:text-white   border rounded-lg"
+            onClick={() => {
+              // filter logic here, hooks
+              const filteredList = filteredRestaurant.filter(
+                (resObj) => resObj.info.avgRating > 4.3
+              );
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Top Rated Resturants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
-        {filteredRestaurant.map((resObj, i) => (
+      <div className="res-container flex flex-wrap ">
+        {filteredRestaurant.map((resObj) => (
           <Link
             to={"/restaurants/" + resObj.info.id}
             key={resObj.info.id}
             className="underline-link"
           >
-            <RestaurantCard resData={resObj} />
+            {resObj?.info?.avgRating > 4.3 ? (
+              <RestaurantCardPromoted resData={resObj} />
+            ) : (
+              <RestaurantCard resData={resObj} />
+            )}
           </Link>
         ))}
       </div>

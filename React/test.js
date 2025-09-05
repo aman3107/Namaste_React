@@ -992,3 +992,34 @@ root.render(<AppLayout />);
 //   const json = await data.json();
 //   setResInfo(json.data);
 // };
+
+{
+  /* <ul>
+        {itemCards.map((item, ind) => (
+          <li key={item.card.info.id}>
+            <strong className="font-medium">
+              {ind + 1}: {item?.card?.info?.name} - {"Rs."}
+              {(item?.card?.info?.price || item?.card?.info?.defaultPrice) /
+                100}
+            </strong>
+          </li>
+        ))}
+      </ul> */
+}
+
+{
+  /* <div>
+      <h1 className="font-bold text-2xl py-2 flex justify-center">{title}</h1>
+      <div>
+        {itemCards !== undefined
+          ? itemCards.map((item, i) => (
+              <p className="leading-8 font-semibold">
+                {i + 1}: {item.card.info.name} Rs.
+                {item.card.info.defaultPrice / 100 ||
+                  item.card.info.price / 100}
+              </p>
+            ))
+          : 0}
+      </div>
+    </div> */
+}
