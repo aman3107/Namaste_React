@@ -15,7 +15,7 @@ const ItemList = ({ items }) => {
   }, [showMessageBar]);
 
   return (
-    <div>
+    <div className="transition-all duration-500">
       {items !== undefined
         ? items.map((item) => (
             <div
@@ -33,9 +33,9 @@ const ItemList = ({ items }) => {
                 </div>
                 <p className="text-xs">{item.card.info.description}</p>
               </div>
-              <div className="w-3/12 p-4">
+              <div className="w-3/12 p-4  ">
                 <img
-                  className=" rounded-lg w-full"
+                  className=" rounded-lg w-[100px]  h-[100px]"
                   alt={item.card.info.name}
                   src={CDN_URL + item.card.info.imageId}
                 />
