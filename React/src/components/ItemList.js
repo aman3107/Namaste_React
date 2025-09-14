@@ -1,9 +1,11 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import MessageBar from "./MessageBar";
 import { useState, useEffect } from "react";
+import { addItem, removeItem } from "../utils/cartSlice";
 const ItemList = ({ items }) => {
   const [showMessageBar, setShowMessageBar] = useState(false);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     let timer;
     if (showMessageBar) {
@@ -13,6 +15,15 @@ const ItemList = ({ items }) => {
     }
     return () => clearTimeout(timer); // Cleanup on unmount
   }, [showMessageBar]);
+
+  const handleAddItem = (item) => {
+    // Dispatch an action
+    dispatch(addItem(item));
+  };
+  const handleRemoveItem = (item) => {
+    // Dispatch an action
+    dispatch(removeItem(item));
+  };
 
   return (
     <div className="transition-all duration-500">
@@ -41,10 +52,20 @@ const ItemList = ({ items }) => {
                 />
                 <button
                   className="bg-white shadow-lg px-2 rounded-lg hover:bg-black hover:text-white"
-                  onClick={() => setShowMessageBar(true)}
+                  onClick={() => {
+                    handleAddItem(item);
+                    setShowMessageBar(true);
+                  }}
                 >
-                  {" "}
-                  Add +{" "}
+                  +
+                </button>
+                <button
+                  className="bg-white shadow-lg px-2 mx-9 rounded-lg hover:bg-black hover:text-white"
+                  onClick={() => {
+                    handleRemoveItem(item);
+                  }}
+                >
+                  -
                 </button>
                 {showMessageBar && <MessageBar />}
               </div>

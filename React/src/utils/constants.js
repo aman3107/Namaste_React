@@ -6,3 +6,6 @@ export const LOGO_URL =
 
 export const Menu_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId=";
+
+export const Cart_Image =
+  "https://static.vecteezy.com/system/resources/previews/024/044/738/non_2x/shopping-cart-logo-design-cart-icon-ecommerce-logo-vector.jpg";
