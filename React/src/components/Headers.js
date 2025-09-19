@@ -5,7 +5,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
-const Header = () => {
+const Headers = () => {
   // let btnName = "Login";
   const [btnName, setbtnName] = useState("Login");
   const { loggedInUser } = useContext(UserContext);
@@ -67,4 +67,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Headers;
